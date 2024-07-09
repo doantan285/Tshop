@@ -6,13 +6,13 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('partials.content-header', ['name' => 'category', 'key' => 'List'])
+        @include('partials.content-header', ['name' => 'Menus', 'key' => 'List'])
 
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{ route('categories.create') }}" class="btn btn-success float-right m-2">Add</a>
+                        <a href="{{ route('menus.create') }}" class="btn btn-success float-right m-2">Add</a>
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -24,13 +24,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($menus as $menu)
                                     <tr>
-                                        <th scope="row">{{ $category->id }}</th>
-                                        <td>{{ $category->name }}</td>
+                                        <th scope="row">{{ $menu->id }}</th>
+                                        <td>{{ $menu->name }}</td>
                                         <td>
-                                            <a href="{{ route('categories.edit', ['id' => $category->id]) }}" class="btn btn-default">Edit</a>
-                                            <a href="{{ route('categories.delete', ['id' => $category->id]) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('menus.edit', ['id' => $menu->id]) }}" class="btn btn-default">Edit</a>
+                                            <a href="{{ route('menus.delete', ['id' => $menu->id]) }}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -38,7 +38,7 @@
                         </table>
                     </div>
                     <div class="col-md-12">
-                        {{ $categories->links() }}
+                        {{ $menus->links() }}
                     </div>
                 </div>
             </div>
